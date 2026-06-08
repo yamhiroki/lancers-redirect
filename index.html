@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to experiment...</title>
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center;
+           align-items: center; height: 100vh; margin: 0; }
+    p { color: #555; font-size: 1.1em; }
+  </style>
+</head>
+<body>
+  <p>Redirecting to the experiment, please wait...</p>
+  <script>
+    var urls = [
+      'https://run.pavlovia.org/yamhiroki/es-shaping-online/',
+      'https://run.pavlovia.org/yamhiroki/pre-cc-es-online/'
+    ];
+    window.location.href = urls[Math.random() < 0.5 ? 0 : 1];
+  </script>
+</body>
+</html>
