@@ -12,11 +12,17 @@
 <body>
   <p>Redirecting to the experiment, please wait...</p>
   <script>
-    var urls = [
-      'https://run.pavlovia.org/yamhiroki/es-shaping-online/?site=japan',
-      'https://run.pavlovia.org/yamhiroki/pre-cc-es-online/?site=japan'
+    // Two-stage randomization:
+    //  1) which experiment (es-shaping-online vs pre-cc-es-online)
+    //  2) which group / coarse-fine order (A vs B)
+    // Each is an independent 50/50 draw → 4 equally-likely combinations.
+    var experiments = [
+      'https://run.pavlovia.org/yamhiroki/es-shaping-online/',
+      'https://run.pavlovia.org/yamhiroki/pre-cc-es-online/'
     ];
-    window.location.href = urls[Math.random() < 0.5 ? 0 : 1];
+    var exp   = experiments[Math.random() < 0.5 ? 0 : 1];
+    var group = Math.random() < 0.5 ? 'A' : 'B';
+    window.location.href = exp + '?site=japan&group=' + group;
   </script>
 </body>
 </html>
